@@ -23,14 +23,14 @@ let enemies = [
     yPos: 60,
     width: 40,
     height: 40,
-    speedY: 1,
+    speedY: 2,
     },
     {
     xPos: 500,
     yPos: 100,
     width: 40,
     height: 40,
-    speedY: 2,
+    speedY: 1,
     },
 ];
 let player = {

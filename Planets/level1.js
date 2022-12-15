@@ -9,7 +9,7 @@ let enemies = [
     yPos: 40,
     width: 40,
     height: 40,
-    speedY: 2,
+    speedY: 1,
     },
     {
     xPos: 300,
@@ -30,7 +30,7 @@ let enemies = [
     yPos: 100,
     width: 40,
     height: 40,
-    speedY: 2,
+    speedY: 1,
     },
 ];
 let player = {
@@ -133,26 +133,24 @@ let update = function()
         if(checkForCollision(player, goal))
             {
                 gameIsLive = false;
-                alert("You won!")
-                window.location = "";
+                window.location = "VideoTwo.html";
             }
     enemies.forEach(function(element)
         {
             if(checkForCollision(player, element))
             {
-                gameIsLive = false;
-                alert("Game Over!")
-                window.location = "";
+                gameIsLive = false;               
+                window.location = "VideoOne.html";
             }
         element.yPos += element.speedY;
-        if(element.yPos <= 10)
+        if(element.yPos <= -10)
             {
-            element.yPos = 10;
+            element.yPos = -10;
             element.speedY *= -1;
             }
-        else if(element.yPos >= GAME_HEIGHT - 50)
+        else if(element.yPos >= GAME_HEIGHT)
             {
-            element.yPos = GAME_HEIGHT - 50;
+            element.yPos = GAME_HEIGHT;
             element.speedY *= -1;
             }
         }

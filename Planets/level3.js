@@ -5,33 +5,51 @@ const GAME_HEIGHT = 360;
 let gameIsLive = true;
 let enemies = [
     {
-    xPos: 200,
-    yPos: 40,
+    xPos: 275,
+    yPos: 0,
     width: 40,
     height: 40,
     speedY: 2,
     },
     {
     xPos: 300,
-    yPos: 180,
-    width: 40,
-    height: 40,
-    speedY: 1,
-    },
-    {
-    xPos: 400,
-    yPos: 60,
-    width: 40,
-    height: 40,
-    speedY: 1,
-    },
-    {
-    xPos: 500,
-    yPos: 100,
+    yPos: 275,
     width: 40,
     height: 40,
     speedY: 2,
     },
+    {
+    xPos: 400,
+    yPos: 20,
+    width: 40,
+    height: 40,
+    speedY: 2,
+    },
+    {
+    xPos: 500,
+    yPos: 300,
+    width: 40,
+    height: 40,
+    speedY: 2,
+    speedX: 2,
+    },
+    {
+        xPos: 350,
+        yPos:250,
+        width: 40,
+        height: 40,
+        speedY: 2,
+        speedX: 2,
+        },
+        {
+            xPos: 600,
+            yPos: 220,
+            width: 40,
+            height: 40,
+            speedY: 2,
+            speedX: 2,
+            },
+    
 ];
 let player = {
     xPos: 10,
@@ -145,14 +163,14 @@ let update = function()
                 window.location = "";
             }
         element.yPos += element.speedY;
-        if(element.yPos <= 10)
+        if(element.yPos <= -60)
             {
-            element.yPos = 10;
+            element.yPos = -60;
             element.speedY *= -1;
             }
-        else if(element.yPos >= GAME_HEIGHT - 50)
+        else if(element.yPos >= GAME_HEIGHT)
             {
-            element.yPos = GAME_HEIGHT - 50;
+            element.yPos = GAME_HEIGHT;
             element.speedY *= -1;
             }
         }
